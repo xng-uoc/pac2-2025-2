@@ -1,0 +1,107 @@
+name: pac2-2025-1
+topology:
+  nodes:
+    vyos01:
+      kind: vyosnetworks_vyos
+      image: ghcr.io/peretuset/vyos:latest
+      mgmt-ipv4: 172.20.20.31
+      labels:
+        graph-icon: router
+    vyos02:
+      kind: vyosnetworks_vyos
+      image: ghcr.io/peretuset/vyos:latest
+      mgmt-ipv4: 172.20.20.32
+      labels:
+        graph-icon: router
+    vyos11:
+      kind: vyosnetworks_vyos
+      image: ghcr.io/peretuset/vyos:latest
+      mgmt-ipv4: 172.20.20.11
+      labels:
+        graph-icon: router
+    vyos12:
+      kind: vyosnetworks_vyos
+      image: ghcr.io/peretuset/vyos:latest
+      mgmt-ipv4: 172.20.20.12
+      labels:
+        graph-icon: router
+    vyos13:
+      kind: vyosnetworks_vyos
+      image: ghcr.io/peretuset/vyos:latest
+      mgmt-ipv4: 172.20.20.13
+      labels:
+        graph-icon: router
+    vyos14:
+      kind: vyosnetworks_vyos
+      image: ghcr.io/peretuset/vyos:latest
+      mgmt-ipv4: 172.20.20.14
+      labels:
+        graph-icon: router
+    vyos15:
+      kind: vyosnetworks_vyos
+      image: ghcr.io/peretuset/vyos:latest
+      mgmt-ipv4: 172.20.20.15
+      labels:
+        graph-icon: router
+    host11:
+      kind: linux
+      image: ghcr.io/peretuset/alpine:latest
+      mgmt-ipv4: 172.20.20.21
+      labels:
+        graph-icon: host
+    host12:
+      kind: linux
+      image: ghcr.io/peretuset/alpine:latest
+      mgmt-ipv4: 172.20.20.22
+      labels:
+        graph-icon: host
+    host13:
+      kind: linux
+      image: ghcr.io/peretuset/alpine:latest
+      mgmt-ipv4: 172.20.20.23
+      labels:
+        graph-icon: host
+    host14:
+      kind: linux
+      image: ghcr.io/peretuset/alpine:latest
+      mgmt-ipv4: 172.20.20.24
+      labels:
+        graph-icon: host
+    host15:
+      kind: linux
+      image: ghcr.io/peretuset/alpine:latest
+      mgmt-ipv4: 172.20.20.25
+      labels:
+        graph-icon: host
+    ssh:
+      kind: linux
+      image: netreplica/graphite
+      mgmt-ipv4: 172.20.20.100
+      env:
+        CLAB_SSH_CONNECTION: ${SSH_CONNECTION}
+      binds:
+        - __clabDir__/topology-data.json:/htdocs/default/default.json:ro
+        - __clabDir__/ansible-inventory.yml:/htdocs/lab/default/ansible-invento>
+      ports:
+        - 8080:80
+      exec:
+        - sh -c 'graphite_motd.sh 8080'
+      labels:
+        graph-hide: yes
+  links:
+    - endpoints: ["vyos01:eth6", "vyos02:eth6"]
+    - endpoints: ["vyos01:eth1", "vyos11:eth1"]
+    - endpoints: ["vyos01:eth2", "vyos12:eth1"]
+    - endpoints: ["vyos01:eth3", "vyos13:eth1"]
+    - endpoints: ["vyos01:eth4", "vyos14:eth1"]
+    - endpoints: ["vyos01:eth5", "vyos15:eth1"]
+    - endpoints: ["vyos02:eth1", "vyos11:eth2"]
+    - endpoints: ["vyos02:eth2", "vyos12:eth2"]
+    - endpoints: ["vyos02:eth3", "vyos13:eth2"]
+    - endpoints: ["vyos02:eth4", "vyos14:eth2"]
+    - endpoints: ["vyos02:eth5", "vyos15:eth2"]
+    - endpoints: ["vyos11:eth3", "host11:eth1"]
+    - endpoints: ["vyos12:eth3", "host12:eth1"]
+    - endpoints: ["vyos13:eth3", "host13:eth1"]
+    - endpoints: ["vyos14:eth3", "host14:eth1"]
+    - endpoints: ["vyos15:eth3", "host15:eth1"]

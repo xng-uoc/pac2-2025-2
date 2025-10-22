@@ -1,0 +1,145 @@
+interfaces {
+    dummy dum0 {
+        address "2001:db8::15/128"
+    }
+    ethernet eth0 {
+        address "172.20.20.15/24"
+        address "3fff:172:20:20::b/64"
+        description "Management Interface"
+    }
+    ethernet eth1 {
+        ipv6 {
+            address {
+                eui64 "2001:db8:1:15::/64"
+            }
+        }
+    }
+    ethernet eth2 {
+        ipv6 {
+            address {
+                eui64 "2001:db8:2:15::/64"
+            }
+        }
+    }
+    ethernet eth3 {
+        ipv6 {
+            address {
+                eui64 "2001:db8:0:15::/64"
+            }
+        }
+    }
+    loopback lo {
+    }
+}
+pki {
+    ca clab {
+        certificate "MIIDizCCAnOgAwIBAgICB+MwDQYJKoZIhvcNAQELBQAwVzELMAkGA1UEBhMCVVMxCTAHBgNVBAcTADEVMBMGA1UEChMMY29udGFpbmVybGFiMQkwBwYDVQQLEwAxGzAZBgNVBAMTEnBhYzItMjAyNS0xIGxhYiBDQTAeFw0yNTA5MjgxNjA1NDlaFw0yNjA5MjgxNjA1NDlaMFcxCzAJBgNVBAYTAlVTMQkwBwYDVQQHEwAxFTATBgNVBAoTDGNvbnRhaW5lcmxhYjEJMAcGA1UECxMAMRswGQYDVQQDExJwYWMyLTIwMjUtMSBsYWIgQ0EwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDmlB+H8ZJLWPS6UKPwxsl9U1KjH3yXIDtiJ40wGVsOSKHgqcKcn5X2Opa38aS+4MA+I1at9ErFQKL0RNzLBY+qpUwLA7n0mVgbJiduUpuJKciufCR7oP9nnkXk77dmDKQstvXNMlUk8n1qpuz138pv535F3xXoQAqr3Nr/TS8Rje+7A+7U9Sfp7CAVjDCflOA12Fh3nZdaTruglCYtAewkPQPhHIApG25o7+m3LZrE1axuOD9TgtlII3aKCX+vEf4Lkrq1EKeAudVfZNwk0lxAe6R2tLtqiDHt11c71z1hJzKSRiMtnFcGKkY49Ecw8RcY/hl66T8BVXPEaDZbwPTxAgMBAAGjYTBfMA4GA1UdDwEB/wQEAwIChDAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwEwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUsOYPI1H4kWkOPbpqfa4FYYwzVMYwDQYJKoZIhvcNAQELBQADggEBAA389XahSiCbJlGtEnlW1wHasgJouAir/7XINWWgj8CoMCWuVcmQldgSXfKbg+G52I0SMSEFva1lez3o6/jVJrQk4bHR6ds4CHyJTTp30hYvFJHotoDB0jJuWVgwbiVLc2UV98eLqDhIRrmkPDeBuYuezIlHeAwKoL0l4W4vBkGW03+6G9AbZN+ZeiwoLIPvBLvZDIzhMuNmUZGfwkjc8V0jNUJGfb0PD6kl+Fngm220ln30iz/yy9Cnc8FKwLpH+QEYvBnyoHnUfGSjPqmlabxKibwpK+TJn/KEeGRGAUk72gqRH8LGtbYWic0NophETAJ07ez4H+bCwdtbx4B29ME="
+    }
+    certificate self {
+        certificate "MIID2jCCAsKgAwIBAgICBnowDQYJKoZIhvcNAQELBQAwVzELMAkGA1UEBhMCVVMxCTAHBgNVBAcTADEVMBMGA1UEChMMY29udGFpbmVybGFiMQkwBwYDVQQLEwAxGzAZBgNVBAMTEnBhYzItMjAyNS0xIGxhYiBDQTAeFw0yNTA5MjgxNjA1NDlaFw0yNjA5MjgxNjA1NDlaMFoxCzAJBgNVBAYTAlVTMQkwBwYDVQQHEwAxFTATBgNVBAoTDGNvbnRhaW5lcmxhYjEJMAcGA1UECxMAMR4wHAYDVQQDExV2eW9zMTUucGFjMi0yMDI1LTEuaW8wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDJVWzTt74J8uvVBvqSoYd2T7HDjZDqaqU3IlKTg4Jl+8xQ6dbY/QNikQ+9fOlFKBZ9tNE2C4xGLvYn7oee0n8aKWBcO5wwwSyoyze7OSLrrfSivNsz6FNffjm2EPj6/XTjcANLQVoHzP9ubviSsbLEGc/+gNcUHyt6iyZl542h7t6nyRAVY8xN7+336pl1JQ8Mcd/swNxRMo1+42mIhNFnW2C8Juq1qGYQEamBC7ElAkogneSDjchE3dNt6te2ub89EKynoZ32NbghW1fNrVhpu86X1CXmTw9EUDd5+YQkScOpoxQDKhdCY+4Dt081z3vk2wgAdAZnO2ANpJl5E7gdAgMBAAGjgawwgakwDgYDVR0PAQH/BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAOBgNVHQ4EBwQFAQIDBAYwHwYDVR0jBBgwFoAUsOYPI1H4kWkOPbpqfa4FYYwzVMYwRwYDVR0RBEAwPoIGdnlvczE1ghdjbGFiLXBhYzItMjAyNS0xLXZ5b3MxNYIVdnlvczE1LnBhYzItMjAyNS0xLmlvhwSsFBQPMA0GCSqGSIb3DQEBCwUAA4IBAQB7NNQ4f1eTG8Kz1Y7d/j+pQGvk8XDREXAh6nifv+M9A3gMZm/Q7gRjOf6PJCGGZuti+7o2V+R3kMnvkU3foIOvdYsR5NKOp4EHVMGBA9p0mK1NNVgSJyXeIX+vBunuoUpMdPahzDHbaffifnvR4lbtnmY9eeM7zj4QYf5CyVHwQ7DEmIQeUw/o8TNPhxTc6168EhOXIedhO9CdwH+ITwpPTecn80YTY02ZFochCvH9/bYJTq89+nvfDB7wIIo7cxtSbF+cu0JC+fO+XjK1m3OrTVMJc7eoCeBi/iG3g/h6NIageyc4VO9HEkBEndT8bYQ/kH3hIh00orrI6J09O6HJ"
+        private {
+            key "MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDJVWzTt74J8uvVBvqSoYd2T7HDjZDqaqU3IlKTg4Jl+8xQ6dbY/QNikQ+9fOlFKBZ9tNE2C4xGLvYn7oee0n8aKWBcO5wwwSyoyze7OSLrrfSivNsz6FNffjm2EPj6/XTjcANLQVoHzP9ubviSsbLEGc/+gNcUHyt6iyZl542h7t6nyRAVY8xN7+336pl1JQ8Mcd/swNxRMo1+42mIhNFnW2C8Juq1qGYQEamBC7ElAkogneSDjchE3dNt6te2ub89EKynoZ32NbghW1fNrVhpu86X1CXmTw9EUDd5+YQkScOpoxQDKhdCY+4Dt081z3vk2wgAdAZnO2ANpJl5E7gdAgMBAAECggEAB2OrQC9Y5OSVjewDplNnYArswKX20PkOYfJQiuQjamV4yj91iIvrY+K5wSqkenVOM1mU6XbjCcW6Ix0OEouHPrPmECc1RFTStB9BRw3XH5ny20YzMA8xgCpnKSzWS9/25PdnfODufPrOeoR4Jb9/4Cf9Cko67/IflmUlCPhxVPrEEZTX4JrGjmdWWMSVmgZgtdBcfSXu///C2i8xLAHncaBzsktk6ca0Yx/MVLLGcY+F4Ik5+G0cgz+5OTsTPyBBZjk8lwGgcOHcfwivrK6QiNaPuxqAerdctzUMd84TJ3OvZ9/vKkHysQwgvBb9H7e6OuHsiamW0vsFaIJwUGnhwQKBgQDkzlGVfXXjD2UmwnmnaNFB0UOrZMQ1My7b5KQtG5w/8Uw3fTOk6DsXGjLAKyKlnqeu0eesLnBsF7ISd3Z4PiiTfKZkfjrv7wXdv/SnWuy9ZzCkI9z15gEvM2k7R++WCCy50hR0cUBDraeMVoBDPe7dRIdhgr5lRjEO00Ppt6e21wKBgQDhQztwXS5tF5mZOEBNlY2xQU9zPDwRxHYNETswctMy2/Wec9YfyeuEaBYHgkfJyUQ+xyTsqYFN8onJqMy66JWn8KqxJZ4VEboQxwXDLR8gv/GP4ZBZc0QAkrOB7DvZp5bqhwY2CrMXYKPIrYc8o1orHr/YWClfpjyCzbF8XZHOKwKBgQDBbBDX2OmRe3A9JeYFubw8cZVNDLA5cP1J8q0/XLnn7CpMNlE0NQXO79y7SzvM2qRSSywYCGINXrKwncDOwW030QYwqe1U67D/1sgRufGr49Hg0Fh4n2mc508sSBGnuV1l8MxN63cyP1kGcBGZxn9pGgeATTB7GK1cJQiiSRlEnQKBgQCMMF1Ddpo4BmHu+xT5s8M0tyKM4sW3gP6+7yRY6H0Lv9xCOnDd47oQ8v4Suj+XEwzHzQPrzSnNqs2ZlNWk1K6ej6aLDJAvKJMVcebiKqiepxXcp1JAeP2vJZ1VlAFDWYsQdeulok8Gk3wanfP2ButMvpxCNcu53Sj3dq+oaEsfdQKBgHt5xhJKM6VjEE/smTnngY2aGzSvCmxAZBXxzSjSXWL/nMcuSsG83RWtlB8nY9hHthQ1POhjM9W5jiOPFxTdNp4KEU4z7/QFjklanLz/gLP8lXfFWMZp5T3Z9gyAo9f8LfeNdfmyyq+KH8kHROMFkUelWMF0FqKce14kr44CzcFR"
+        }
+    }
+}
+protocols {
+    isis {
+        interface dum0 {
+            passive
+        }
+        interface eth1 {
+            circuit-type "level-2-only"
+            network {
+                point-to-point
+            }
+        }
+        interface eth2 {
+            circuit-type "level-2-only"
+            network {
+                point-to-point
+            }
+        }
+        interface eth3 {
+            passive
+        }
+        level "level-2"
+        net "49.0001.0000.0000.0015.00"
+    }
+}
+service {
+    https {
+        api {
+            keys {
+                id admin {
+                    key "admin"
+                }
+            }
+            rest {
+            }
+        }
+        certificates {
+            ca-certificate "clab"
+            certificate "self"
+        }
+        listen-address "0.0.0.0"
+    }
+    ntp {
+        allow-client {
+            address "127.0.0.0/8"
+            address "169.254.0.0/16"
+            address "10.0.0.0/8"
+            address "172.16.0.0/12"
+            address "192.168.0.0/16"
+            address "::1/128"
+            address "fe80::/10"
+            address "fc00::/7"
+        }
+        server time1.vyos.net {
+        }
+        server time2.vyos.net {
+        }
+        server time3.vyos.net {
+        }
+    }
+    router-advert {
+        interface eth3 {
+            prefix 2001:db8:0:15::/64 {
+            }
+        }
+    }
+    ssh {
+        listen-address "0.0.0.0"
+    }
+}
+system {
+    config-management {
+        commit-revisions "100"
+    }
+    host-name "vyos15"
+    login {
+        user admin {
+            authentication {
+                encrypted-password "$6$rounds=656000$Lij/3gkWx53uL7yO$SIUSUUhFodvT/3Kqby2J5iwDFuZSzh2bvtgG2lhP/uY5X2VX2IyvYUYUBZWd57Ij0tLZvSUgOJ26Vz3dqBU2o0"
+                public-keys clab {
+                    key "AAAAB3NzaC1yc2EAAAADAQABAAABgQCrNNRvXqLqgzLt/RnlXU5HGKIjhQWlW5hr0OCJz8zMR9TeraWe+pOehLlzhJQ4Nd9SF/7mekT2jQitbv47Nrb9p2FRAnoxRVWuGXc+tPsa8tlZnV9cVZ7EBaxRU27xBmU0bfLI8u08/atsCsri30nPoZj0MvGMLHDnp++FA+3NM/3WNOdv+eJ06H0KNmW8swq/tzkWbX+OmxCG3FDs9l0Q1mcMVePHwCy1AwClkcd3bOpIcvQ6h49wBlTwoKK8tmcbuT62wkN2AWEcYwTHgul1P0JTtUbYylX+q5lBqMcZm0YWJMY2idyGHLyOCPNaV+YdiegvnIqyKLfiUEQ3nyUQK9KpiNQs2xFZ5TUg26wzZpvAyzRpLYlycw3L6Rc82fKxO60ZgZsmvtzYEga8Cp+KMMdOhbzBxn5rRy1pTp7CgVFLldEL9i2HBzaJEqwbsC5DdjzxoU0wYUq/jvBfGY8wutQHp2txCaMGUOA/GEYPUuzKQRFj5JgKwYkMxZ0oock="
+                    type "ssh-rsa"
+                }
+            }
+        }
+    }
+    syslog {
+        local {
+            facility all {
+                level "info"
+            }
+            facility local7 {
+                level "debug"
+            }
+        }
+    }
+}
+
+
+// Warning: Do not remove the following line.
+// vyos-config-version: "bgp@6:broadcast-relay@1:cluster@2:config-management@1:conntrack@6:conntrack-sync@2:container@3:dhcp-relay@2:dhcp-server@11:dhcpv6-server@6:dns-dynamic@4:dns-forwarding@4:firewall@19:flow-accounting@1:https@7:ids@1:interfaces@33:ipoe-server@4:ipsec@13:isis@3:l2tp@9:lldp@3:mdns@1:monitoring@2:nat@8:nat66@3:ntp@3:openconnect@3:openvpn@4:ospf@2:pim@1:policy@8:pppoe-server@11:pptp@5:qos@2:quagga@11:reverse-proxy@3:rip@1:rpki@2:salt@1:snmp@3:ssh@2:sstp@6:system@29:vrf@3:vrrp@4:vyos-accel-ppp@2:wanloadbalance@4:webproxy@2"
+// Release version: 1.5-stream-2025-Q2

@@ -1,0 +1,16 @@
+List of applied migration modules:
+applying /opt/vyatta/etc/config-migrate/migrate/conntrack/5-to-6
+applying /opt/vyatta/etc/config-migrate/migrate/container/2-to-3
+applying /opt/vyatta/etc/config-migrate/migrate/dhcpv6-server/5-to-6
+applying /opt/vyatta/etc/config-migrate/migrate/firewall/16-to-17
+applying /opt/vyatta/etc/config-migrate/migrate/firewall/17-to-18
+applying /opt/vyatta/etc/config-migrate/migrate/firewall/18-to-19
+applying /opt/vyatta/etc/config-migrate/migrate/https/6-to-7
+applying /opt/vyatta/etc/config-migrate/migrate/lldp/2-to-3
+applying /opt/vyatta/etc/config-migrate/migrate/monitoring/1-to-2
+applying /opt/vyatta/etc/config-migrate/migrate/bgp/5-to-6
+applying /opt/vyatta/etc/config-migrate/migrate/reverse-proxy/1-to-2
+applying /opt/vyatta/etc/config-migrate/migrate/reverse-proxy/2-to-3
+applying /opt/vyatta/etc/config-migrate/migrate/system/27-to-28
+applying /opt/vyatta/etc/config-migrate/migrate/system/28-to-29
+applying /opt/vyatta/etc/config-migrate/migrate/wanloadbalance/3-to-4

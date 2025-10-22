@@ -1,0 +1,66 @@
+---
+host11:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.21
+host12:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.22
+host13:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.23
+host14:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.24
+host15:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.25
+ssh:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.100
+vyos01:
+    username: admin
+    password: admin
+    platform: vyosnetworks_vyos
+    hostname: 172.20.20.31
+vyos02:
+    username: admin
+    password: admin
+    platform: vyosnetworks_vyos
+    hostname: 172.20.20.32
+vyos11:
+    username: admin
+    password: admin
+    platform: vyosnetworks_vyos
+    hostname: 172.20.20.11
+vyos12:
+    username: admin
+    password: admin
+    platform: vyosnetworks_vyos
+    hostname: 172.20.20.12
+vyos13:
+    username: admin
+    password: admin
+    platform: vyosnetworks_vyos
+    hostname: 172.20.20.13
+vyos14:
+    username: admin
+    password: admin
+    platform: vyosnetworks_vyos
+    hostname: 172.20.20.14
+vyos15:
+    username: admin
+    password: admin
+    platform: vyosnetworks_vyos
+    hostname: 172.20.20.15
