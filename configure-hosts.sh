@@ -1,6 +1,6 @@
 #!/bin/sh
 
-clab_name="clab-pac2-2025-1"
+clab_name="clab-pac2-2025-2"
 
 # Remove the default routes to ensure that routers and hosts are isolated
 printf "Removing default routes from routers and hosts..."
